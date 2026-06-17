@@ -55,6 +55,13 @@ COLOR_WIN  = "#2ecc71"   # verde
 COLOR_LOSE = "#e74c3c"   # vermelho
 COLOR_DRAW = "#3498db"   # azul
 
+
+def hex_to_rgba(hex_color: str, alpha: float = 0.18) -> str:
+    """Converte cor hex (#rrggbb) para rgba() aceito pelo Plotly."""
+    h = hex_color.lstrip("#")
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    return f"rgba({r},{g},{b},{alpha})"
+
 # ---------------------------------------------------------------------------
 # Cache de recursos pesados
 # ---------------------------------------------------------------------------
@@ -135,9 +142,9 @@ def radar_chart(team_a: str, idx_a: dict, team_b: str, idx_b: dict) -> go.Figure
     vals_b = [idx_b.get(k) or 0 for k in keys]
 
     fig = go.Figure()
-    for vals, name, color, fill in [
-        (vals_a, team_a, COLOR_WIN,  COLOR_WIN  + "30"),
-        (vals_b, team_b, COLOR_LOSE, COLOR_LOSE + "30"),
+    for vals, name, color in [
+        (vals_a, team_a, COLOR_WIN),
+        (vals_b, team_b, COLOR_LOSE),
     ]:
         fig.add_trace(go.Scatterpolar(
             r=vals + [vals[0]],
@@ -145,7 +152,7 @@ def radar_chart(team_a: str, idx_a: dict, team_b: str, idx_b: dict) -> go.Figure
             fill="toself",
             name=name,
             line_color=color,
-            fillcolor=fill,
+            fillcolor=hex_to_rgba(color),
         ))
 
     fig.update_layout(
@@ -174,6 +181,7 @@ def radar_multi(teams: list[str], indices: pd.DataFrame) -> go.Figure:
             fill="toself",
             name=team,
             line_color=color,
+            fillcolor=hex_to_rgba(color),
         ))
 
     fig.update_layout(
