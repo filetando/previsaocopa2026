@@ -36,18 +36,26 @@ def _detectar_codigo_time(df: pd.DataFrame) -> str:
     O time do arquivo aparece em todos os jogos (col3 OU col4). O codigo
     com frequencia igual ao numero de partidas e o time do arquivo.
 
+    Para arquivos que contem selecoes renomeadas (ex: Tchecoslováquia/CS
+    -> Republica Tcheca/CZ), o codigo unico nao existe. Nesse caso usa
+    as ultimas 100 linhas (mais recentes, pois o TSV e cronologico).
+
     Args:
         df: DataFrame bruto lido do TSV do eloratings.net.
 
     Returns:
-        Codigo de 2 letras (ex: 'BR', 'FR').
+        Codigo de 2 letras (ex: 'BR', 'FR', 'CZ').
     """
     n = len(df)
     contagem = Counter(df[_COL_TEAM1].tolist() + df[_COL_TEAM2].tolist())
     for codigo, freq in contagem.most_common():
         if freq == n:
             return str(codigo)
-    return str(contagem.most_common(1)[0][0])
+    # Nenhum codigo aparece em 100% das linhas: selecao mudou de codigo
+    # historicamente (ex: CS->CZ). Usa as ultimas 100 linhas (mais recentes).
+    tail = df.tail(min(100, n))
+    recentes = Counter(tail[_COL_TEAM1].tolist() + tail[_COL_TEAM2].tolist())
+    return str(recentes.most_common(1)[0][0])
 
 
 def _parse_historico(df: pd.DataFrame, codigo: str) -> pd.DataFrame:
