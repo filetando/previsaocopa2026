@@ -4,16 +4,22 @@
 Use na feature engineering para ponderar metricas brutas pelo nivel do adversario.
 SEMPRE usar Elo historico (data da partida), NUNCA o Elo atual.
 
+## Fonte canonica: eloratings.net
+# ATENCAO: soccerdata.ClubElo() e para clubes, NAO para selecoes nacionais.
+# Usar eloratings.net diretamente via src/collection/elo_collector.py.
+
 ## Como carregar Elo historico
 ```python
-import soccerdata as sd
+import pandas as pd
 from datetime import datetime
+from src.utils.config import DATA_RAW
 
 def obter_elo_na_data(team: str, date: datetime) -> float:
-    elo = sd.ClubElo()
-    historico = elo.read_by_team(team)
-    registro = historico[historico.index <= date].iloc[-1]
-    return float(registro["elo"])
+    """Retorna o Elo da selecao na data da partida (ou mais proximo anterior)."""
+    historico = pd.read_parquet(DATA_RAW / "elo" / "elo_historico.parquet")
+    team_df = historico[historico["team"] == team].copy()
+    team_df = team_df[team_df["date"] <= pd.Timestamp(date)]
+    return float(team_df.sort_values("date").iloc[-1]["elo"])
 ```
 
 ## Formula de ponderacao

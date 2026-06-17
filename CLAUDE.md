@@ -39,3 +39,14 @@ gerando distribuição de placares via simulação de Poisson (Dixon-Coles).
 - Todo script deve ter logging configurado
 - Toda funcao deve ter docstring e type hints
 - Rodar pytest tests/ antes de qualquer commit
+
+## Ritual de transicao entre fases (OBRIGATORIO ao iniciar qualquer fase X.Y)
+1. Criar docs/fase_X_nome.md documentando o que foi feito na fase anterior:
+   - O que foi implementado e por que cada decisao foi tomada
+   - Problemas encontrados e como foram resolvidos
+   - Decisoes tecnicas relevantes para estudo futuro
+   - Resultados e metricas de cobertura alcancados
+   - Convencao de nome: docs/fase_0_setup.md, docs/fase_1_coleta.md, etc.
+2. Commit da fase anterior: git add + git commit com mensagem "feat: fase X completa - <resumo>"
+3. Push para o repositorio remoto: git push
+4. So entao iniciar o trabalho da nova fase
