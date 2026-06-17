@@ -1,0 +1,28 @@
+# Coleta de dados
+statsbombpy>=1.0.0
+soccerdata>=1.8.0
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# Manipulacao de dados
+pandas>=2.1.0
+numpy>=1.26.0
+pyarrow>=14.0.0
+
+# Modelo estatistico
+penaltyblog>=0.12.0
+scipy>=1.11.0
+
+# Utilitarios
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+
+# Qualidade de codigo
+black>=23.0.0
+isort>=5.12.0
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Visualizacao
+matplotlib>=3.8.0
+seaborn>=0.13.0

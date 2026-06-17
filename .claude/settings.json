@@ -1,0 +1,22 @@
+{
+  "model": "claude-sonnet-4-6",
+  "autoSave": true,
+  "autoSaveDelay": 1000,
+  "permissions": {
+    "allow": [
+      "Bash(pip install *)",
+      "Bash(python *)",
+      "Bash(pytest *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git status)",
+      "Bash(git diff *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force*)",
+      "Bash(git reset --hard*)",
+      "Write(data/raw/*)"
+    ]
+  }
+}

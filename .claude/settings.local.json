@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/Scripts/python.exe -m pip install -r requirements.txt)",
+      "Bash(.venv/Scripts/python.exe -c \"import statsbombpy, soccerdata, penaltyblog; print\\('OK: statsbombpy', statsbombpy.__version__\\); print\\('OK: soccerdata', soccerdata.__version__\\); print\\('OK: penaltyblog', penaltyblog.__version__\\)\")",
+      "Bash(.venv/Scripts/python.exe -c ' *)",
+      "Bash(.venv/Scripts/python.exe -c \"import statsbombpy, soccerdata, penaltyblog; print\\('Criterio Fase 0: OK'\\)\")",
+      "Bash(git init *)"
+    ]
+  }
+}
