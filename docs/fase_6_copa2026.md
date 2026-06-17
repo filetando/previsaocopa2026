@@ -32,24 +32,22 @@ Gerar previsões para todos os jogos da Copa do Mundo 2026 e simular o torneio c
 
 ## Grupos da Copa 2026
 
-*(Definidos pela FIFA em dezembro de 2025)*
+*(Sorteio oficial FIFA, Dezembro 2025)*
 
 | Grupo | Times |
 |---|---|
-| A | United States, Panama, Canada, Mexico |
-| B | Argentina, Chile, Peru, Ecuador |
-| C | Brazil, Colombia, Paraguay, Uruguay |
-| D | Spain, Morocco, Portugal, Belgium |
-| E | France, Germany, Netherlands, England |
-| F | Japan, South Korea, Australia, Iran |
-| G | Algeria, Senegal, Egypt, Ivory Coast |
-| H | Uzbekistan, Saudi Arabia, Jordan, Iraq |
-| I | New Zealand, Qatar, DR Congo, South Africa |
-| J | Norway, Croatia, Austria, Switzerland |
-| K | Turkey, Scotland, Bosnia and Herzegovina, Sweden |
-| L | Ghana, Cape Verde, Tunisia, Curacao |
-
-*(Grupos provisorios — aguardar sorteio oficial)*
+| A | Mexico, South Africa, South Korea, Czechia |
+| B | Canada, Qatar, Switzerland, Bosnia and Herzegovina |
+| C | Brazil, Morocco, Haiti, Scotland |
+| D | United States, Paraguay, Australia, Turkey |
+| E | Germany, Curacao, Ivory Coast, Ecuador |
+| F | Netherlands, Japan, Tunisia, Sweden |
+| G | Belgium, Egypt, Iran, New Zealand |
+| H | Spain, Cape Verde, Saudi Arabia, Uruguay |
+| I | France, Senegal, Norway, Iraq |
+| J | Argentina, Algeria, Austria, Jordan |
+| K | Portugal, Uzbekistan, Colombia, DR Congo |
+| L | England, Croatia, Ghana, Panama |
 
 ---
 
@@ -67,15 +65,21 @@ Gerar previsões para todos os jogos da Copa do Mundo 2026 e simular o torneio c
 - `outputs/predictions/copa2026_preview.md` — tabelas e jogos em Markdown
 - `outputs/predictions/copa2026_standings.parquet` — classificação por grupo
 
-### Principais prováveis 1º colocados por grupo
+### Principais prováveis 1º colocados por grupo (grupos oficiais)
 | Grupo | Favorito | Pts Esperados |
 |---|---|---|
-| B | Argentina | 6.5 |
-| F | Japan | 6.2 |
-| K | Turkey | 5.6 |
-| D | Spain | 5.3 |
-| A | Mexico | 5.4 |
-| C | Colombia | 5.0 |
+| L | England | 7.2 |
+| H | Spain | 7.1 |
+| B | Switzerland | 7.0 |
+| J | Argentina | 6.8 |
+| E | Germany | 6.3 |
+| C | Brazil | 6.3 |
+| F | Japan | 6.3 |
+| G | Belgium | 6.1 |
+| K | Colombia | 5.7 |
+| A | Mexico | 5.5 |
+| I | France | 5.4 |
+| D | United States | 4.8 |
 
 ## Decisões técnicas
 

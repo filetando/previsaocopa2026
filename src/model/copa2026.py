@@ -1,8 +1,8 @@
 """
 Simulacao da Copa do Mundo 2026.
 
-Grupos provisorios baseados no sorteio. Atualizar GROUPS ao confirmar
-o sorteio oficial da FIFA (previsto para Dezembro de 2025).
+Grupos oficiais conforme sorteio FIFA (Dezembro 2025).
+Sede: EUA, Canada e Mexico | 11 Jun - 19 Jul 2026 | 48 selecoes.
 """
 import json
 import logging
@@ -20,21 +20,20 @@ logger = logging.getLogger(__name__)
 
 PREDICTIONS_DIR = ROOT_DIR / "outputs" / "predictions"
 
-# Grupos da Copa 2026 (sorteio: Dezembro 2025)
-# Fonte: sorteio oficial FIFA - atualizar se necessario
+# Grupos oficiais da Copa 2026 (sorteio FIFA, Dezembro 2025)
 GROUPS: dict[str, list[str]] = {
-    "A": ["United States", "Panama", "Canada", "Mexico"],
-    "B": ["Argentina", "Ecuador", "Chile", "Peru"],
-    "C": ["Brazil", "Colombia", "Paraguay", "Uruguay"],
-    "D": ["Spain", "Morocco", "Portugal", "Belgium"],
-    "E": ["France", "Germany", "Netherlands", "England"],
-    "F": ["Japan", "South Korea", "Australia", "Iran"],
-    "G": ["Algeria", "Senegal", "Egypt", "Ivory Coast"],
-    "H": ["Uzbekistan", "Saudi Arabia", "Jordan", "Iraq"],
-    "I": ["New Zealand", "Qatar", "DR Congo", "South Africa"],
-    "J": ["Norway", "Croatia", "Austria", "Switzerland"],
-    "K": ["Turkey", "Scotland", "Bosnia and Herzegovina", "Sweden"],
-    "L": ["Ghana", "Cape Verde", "Tunisia", "Curacao"],
+    "A": ["Mexico", "South Africa", "South Korea", "Czechia"],
+    "B": ["Canada", "Qatar", "Switzerland", "Bosnia and Herzegovina"],
+    "C": ["Brazil", "Morocco", "Haiti", "Scotland"],
+    "D": ["United States", "Paraguay", "Australia", "Turkey"],
+    "E": ["Germany", "Curacao", "Ivory Coast", "Ecuador"],
+    "F": ["Netherlands", "Japan", "Tunisia", "Sweden"],
+    "G": ["Belgium", "Egypt", "Iran", "New Zealand"],
+    "H": ["Spain", "Cape Verde", "Saudi Arabia", "Uruguay"],
+    "I": ["France", "Senegal", "Norway", "Iraq"],
+    "J": ["Argentina", "Algeria", "Austria", "Jordan"],
+    "K": ["Portugal", "Uzbekistan", "Colombia", "DR Congo"],
+    "L": ["England", "Croatia", "Ghana", "Panama"],
 }
 
 
